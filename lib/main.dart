@@ -1,11 +1,25 @@
+import 'package:app/model/media_model.dart';
 import 'package:app/screens/home_page.dart';
 import 'package:app/screens/movies.dart';
 import 'package:app/screens/tv_shows.dart';
-import 'package:app/screens/welcome_page.dart';
+import 'package:app/screens/trending_media.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-void main() {
-  runApp(const MyApp());
+Future<void> main() async {
+  var mediaModel = MediaModel();
+  try {
+    mediaModel.fetchTrendingMoviesWeek();
+    mediaModel.fetchTrendingMoviesDay();
+  } catch (_) {}
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => mediaModel),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

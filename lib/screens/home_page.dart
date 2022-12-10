@@ -1,6 +1,6 @@
 import 'package:app/screens/movies.dart';
 import 'package:app/screens/tv_shows.dart';
-import 'package:app/screens/welcome_page.dart';
+import 'package:app/screens/trending_media.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -27,10 +27,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: const Text("Something app"),
-      //   backgroundColor: Colors.black87,
-      // ),
+      backgroundColor: Colors.transparent,
       body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
