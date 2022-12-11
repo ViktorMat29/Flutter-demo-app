@@ -11,6 +11,7 @@ Future<void> main() async {
   try {
     mediaModel.fetchTrendingMoviesWeek();
     mediaModel.fetchTrendingMoviesDay();
+    mediaModel.fetchTrendingTvShowsWeek();
   } catch (_) {}
   runApp(
     MultiProvider(
