@@ -1,4 +1,5 @@
 class TvShow {
+  final int id;
   final String backgrounDrop;
   final String name;
   final String overview;
@@ -7,6 +8,7 @@ class TvShow {
   final int voteCount;
 
   TvShow({
+    required this.id,
     required this.backgrounDrop,
     required this.posterPath,
     required this.name,
@@ -17,6 +19,7 @@ class TvShow {
 
   factory TvShow.fromJson(Map<String, dynamic> json) {
     return TvShow(
+        id: json['id'],
         backgrounDrop: json['backdrop_path'],
         posterPath: json['poster_path'],
         name: json['name'],

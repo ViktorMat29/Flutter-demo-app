@@ -1,8 +1,8 @@
 import 'package:app/model/media_model.dart';
-import 'package:app/widgets/horizontal_scroll_movie_backgorunds.dart';
-import 'package:app/widgets/horizontal_scroll_movie_posters.dart';
-import 'package:app/widgets/horizontal_scroll_tv_show_posters.dart';
-import 'package:app/widgets/trending_movie_widget.dart';
+import 'package:app/widgets/horizontal%20scrolls/horizontal_scroll_movie_backgorunds.dart';
+import 'package:app/widgets/horizontal%20scrolls/horizontal_scroll_movie_posters.dart';
+import 'package:app/widgets/horizontal%20scrolls/horizontal_scroll_tv_show_posters.dart';
+import 'package:app/widgets/media%20widgets/trending_movie_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';

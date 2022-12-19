@@ -1,8 +1,9 @@
-import 'package:app/widgets/trending_movie_widget.dart';
+import 'package:app/widgets/media%20widgets/trending_movie_widget.dart';
+import 'package:app/widgets/media%20widgets/trending_tv_show_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../model/media_model.dart';
+import '../../model/media_model.dart';
 
 class HorizontalScrollTvShowPosters extends StatefulWidget {
   const HorizontalScrollTvShowPosters({Key? key}) : super(key: key);
@@ -25,7 +26,7 @@ class _HorizontalScrollTvShowPostersState
             .trendingTvShows
             .map((movie) => Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: TrendingMovieWidget(
+                  child: TrendingTvShowWidget(
                       name: movie.name,
                       poster: movie.posterPath,
                       posterWidth: "w200"),

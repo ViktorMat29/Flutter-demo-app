@@ -1,5 +1,7 @@
 import 'dart:convert';
 import 'package:app/model/tv_show.dart';
+import 'package:app/model/video.dart';
+import 'package:app/model/video_parser.dart';
 import 'package:http/http.dart' as http;
 
 import '../model/movie.dart';
@@ -36,6 +38,19 @@ Future<List<TvShow>> fetchTrendingTvShows(
     final responseBody = json.decode(response.body);
     final tvShows = TvShowsResultModel.fromJson(responseBody).tvshows;
     return tvShows;
+  } else {
+    throw Exception(response.reasonPhrase);
+  }
+}
+
+Future<List<Video>> fetchTrailerLink(int id, String mediaType) async {
+  final response = await http.get(Uri.parse(
+      'https://api.themoviedb.org/3/$mediaType/$id/videos?api_key=$apiKey'));
+  // Use the compute function to run parsePhotos in a separate isolate.
+  if (response.statusCode == 200) {
+    final responseBody = json.decode(response.body);
+    final videos = VideosResultModel.fromJson(responseBody).videos;
+    return videos;
   } else {
     throw Exception(response.reasonPhrase);
   }

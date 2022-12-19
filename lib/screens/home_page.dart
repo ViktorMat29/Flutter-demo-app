@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Flutter demo app"),
+        title: const Text("Movie logger"),
         backgroundColor: Colors.transparent,
       ),
       backgroundColor: Colors.transparent,
